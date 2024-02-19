@@ -222,3 +222,15 @@ func Test_readCRDsIfExists(t *testing.T) {
 		assert.Nil(t, crds)
 	})
 }
+
+func TestRun(t *testing.T) {
+	opt := &builders.Options{
+		WorkDir:  "/Users/linkedin/Documents/go/src/github.com/kusionstack.io/catalog/models/samples/helloworld/prod",
+		Settings: []string{"kcl.yaml"},
+		IsKclPkg: true,
+	}
+	stack := &v1.Stack{
+		Path: "/Users/linkedin/Documents/go/src/github.com/kusionstack.io/catalog/models/samples/helloworld/prod",
+	}
+	Run(opt, stack)
+}
